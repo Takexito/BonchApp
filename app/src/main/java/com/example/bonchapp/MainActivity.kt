@@ -30,7 +30,4 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
     }
 
-    fun navigateToFullEvent() {
-        navController.navigate(R.id.action_navigation_event_to_fullEventFragment)
-    }
 }

@@ -1,5 +1,8 @@
 package com.example.bonchapp.presenter
 
+import android.os.Bundle
+import androidx.navigation.fragment.findNavController
+import com.example.bonchapp.R
 import com.example.bonchapp.model.Event
 import com.example.bonchapp.ui.event.EventFragment
 
@@ -15,5 +18,15 @@ class EventPresenter(val context: EventFragment) {
 
     fun onCreate() {
         context.initRecycler(data)
+    }
+    
+    fun onItemClick(pos: Int) {
+        navigateToFullEvent(pos)
+    }
+    
+    private fun navigateToFullEvent(eventId: Int) {
+        val bundle = Bundle()
+        bundle.putInt("eventId", eventId)
+        context.findNavController().navigate(R.id.action_navigation_event_to_fullEventFragment, bundle)
     }
 }

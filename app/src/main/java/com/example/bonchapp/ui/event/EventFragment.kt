@@ -13,8 +13,7 @@ import kotlinx.android.synthetic.main.fragment_event.*
 
 class EventFragment : Fragment() {
 
-    private lateinit var eventViewModel: EventViewModel
-    private val presenter = EventPresenter(this)
+    val presenter = EventPresenter(this)
 
     override fun onCreateView(
         inflater: LayoutInflater,

@@ -37,5 +37,10 @@
         android:id="@+id/fullEventFragment"
         android:name="com.example.bonchapp.ui.event.FullEventFragment"
         android:label="fragment_full_event"
-        tools:layout="@layout/fragment_full_event" />
+        tools:layout="@layout/fragment_full_event" >
+        <argument
+            android:name="eventId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
 </navigation>

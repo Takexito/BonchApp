@@ -10,8 +10,8 @@ import com.example.bonchapp.model.Event
 import kotlinx.android.synthetic.main.item_event.view.*
 
 class EventAdapter(
-    val data: ArrayList<Event>,
-    val eventFragment: EventFragment
+    private val data: ArrayList<Event>,
+    private val eventFragment: EventFragment
 ) : RecyclerView.Adapter<EventAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
@@ -31,7 +31,7 @@ class EventAdapter(
             titleEventView.text = data[position].title
             subTitleEventView.text = data[position].subTitle
             setOnClickListener {
-                (eventFragment.activity as MainActivity).navigateToFullEvent()
+                eventFragment.presenter.onItemClick(position)
             }
         }
     }
