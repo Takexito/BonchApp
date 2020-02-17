@@ -17,6 +17,7 @@ class EventPresenter(val context: EventFragment) {
     )
 
     fun onCreate() {
+        setData()
         context.initRecycler(data)
     }
     
@@ -28,5 +29,9 @@ class EventPresenter(val context: EventFragment) {
         val bundle = Bundle()
         bundle.putInt("eventId", eventId)
         context.findNavController().navigate(R.id.action_navigation_event_to_fullEventFragment, bundle)
+    }
+
+    private fun setData(){
+        TODO("request and parse data")
     }
 }

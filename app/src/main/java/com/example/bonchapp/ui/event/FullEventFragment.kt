@@ -1,17 +1,18 @@
 package com.example.bonchapp.ui.event
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.view.ContextThemeWrapper
 import androidx.fragment.app.Fragment
 import com.example.bonchapp.R
+import com.example.bonchapp.presenter.FullEventPresenter
+import kotlinx.android.synthetic.main.fragment_full_event.*
 
 
 class FullEventFragment : Fragment() {
+
+    val presenter = FullEventPresenter(this)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,7 +24,7 @@ class FullEventFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        fab.setOnClickListener { presenter.onRegButtonPress(it) }
+        presenter.onCreate()
     }
-
 }
