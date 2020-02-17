@@ -18,15 +18,15 @@ class FullEventFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val contextThemeWrapper: Context =
-            ContextThemeWrapper(activity, R.style.AppTheme_NoActionBar)
-        val localInflater = inflater.cloneInContext(contextThemeWrapper)
-        (activity as AppCompatActivity).supportActionBar?.hide()
-        return localInflater.inflate(R.layout.fragment_full_event, container, false)
+//        val contextThemeWrapper: Context =
+//            ContextThemeWrapper(activity, R.style.AppTheme_NoActionBar)
+//        val localInflater = inflater.cloneInContext(contextThemeWrapper)
+        return inflater.inflate(R.layout.fragment_full_event, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
     }
+
 }

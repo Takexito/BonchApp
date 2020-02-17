@@ -10,6 +10,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.bonchapp.ui.event.FullEventFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,12 +26,11 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(setOf(
                 R.id.navigation_event, R.id.navigation_navgut, R.id.navigation_timetable, R.id.navigation_storage,R.id.navigation_profile))
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        //setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
 
     fun navigateToFullEvent() {
         navController.navigate(R.id.action_navigation_event_to_fullEventFragment)
-        Log.d("Bonch", "just mem!")
     }
 }
